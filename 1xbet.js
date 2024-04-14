@@ -9,6 +9,9 @@ if(t.data.search('"OnBet"') != -1){
 	}else{
 	 var	mseg = 'Your account is not eligible to play'
 	}
+    o.onreceive('{"type":1,"target":"OnBet","arguments":[{"ok":false,"l":'+data.arguments[0].l+',"t":0,"ec":'+data.arguments[0].ec+',"et":"'+mseg+'","ts":'+data.arguments[0].ts+'}]}\x1e')
+    console.log(t.data)
+  }else{
   try{
    setTimeout(() => {
  o.onreceive(t.data);
