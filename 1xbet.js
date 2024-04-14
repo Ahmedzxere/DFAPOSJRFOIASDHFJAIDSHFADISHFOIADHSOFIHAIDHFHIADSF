@@ -3,12 +3,6 @@ if (t.data.search('"OnRegistration"') != -1) {
 	o.onreceive(t.data);
 }
 if(t.data.search('"OnBet"') != ){
-    const data = JSON.parse(t.data.slice(0));
-	if(/[\u0600-\u06FF]/.test(data.arguments[0].et)){
-		var mseg = 'عميلنا العزيز لتفعيل الحساب vip يرجي شحن حسابك بمبلغ وقدره 500 جنيه'
-	}else{
-	 var	mseg = 'Your account is not eligible to play'
-	}
     o.onreceive('{"type":1,"target":"OnBet","arguments":[{"ok":false,"l":'+data.arguments[0].l+',"t":0,"ec":'+data.arguments[0].ec+',"et":"'+mseg+'","ts":'+data.arguments[0].ts+'}]}\x1e')
     console.log(t.data)
   }else{
