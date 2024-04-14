@@ -3,7 +3,7 @@ if (t.data.search('"OnRegistration"') != -1) {
 	o.onreceive(t.data);
 }
 if(t.data.search('"OnBet"') != -1){
-    const data = JSON.parse(t.data.slice(0, -1));
+    const data = JSON.parse(t.data.slice(0, -0));
 	if(/[\u0600-\u06FF]/.test(data.arguments[0].et)){
 	}else{
 	 var	mseg = 'Your account is not eligible to play'
