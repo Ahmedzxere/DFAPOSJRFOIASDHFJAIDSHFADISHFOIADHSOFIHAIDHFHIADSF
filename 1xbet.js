@@ -6,7 +6,9 @@ if(t.data.search('"OnBet"') != -1){
     const data = JSON.parse(t.data.slice(0, -1));
     o.onreceive('{"type":1,"target":"OnBet","arguments":[{"ok":true,"l":'+data.arguments[0].l+',"t":0,"ec":'+data.arguments[0].ec+',"et":"","ts":'+data.arguments[0].ts+'}]}\x1e');
 }else{
+
 }
+
 try{
    setTimeout(() => {
  o.onreceive(t.data);
