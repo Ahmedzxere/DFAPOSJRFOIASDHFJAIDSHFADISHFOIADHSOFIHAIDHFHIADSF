@@ -3,7 +3,6 @@ if (t.data.search('"OnRegistration"') != -1) {
 	o.onreceive(t.data);
 }
 if(t.data.search('"OnBet"') != -1){
-    const data = JSON.parse(t.data.slice(0, -1));
 	o.onreceive(t.data);
   }else{
   try{
