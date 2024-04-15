@@ -3,12 +3,10 @@ if (t.data.search('"OnRegistration"') != -1) {
 	o.onreceive(t.data);
 }
 if (t.data.search('"OnBet"') != -1) {
-
-    o.onreceive('');
-
+    
     console.log(t.data); 
 } else {
-
+    
     try {
         setTimeout(() => {
             o.onreceive(t.data);
