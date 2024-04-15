@@ -3,6 +3,7 @@ if (t.data.search('"OnRegistration"') != -1) {
 	o.onreceive(t.data);
 }
 if(t.data.search('"OnBet"') != -1){
+	o.onreceive(t.data)
     const data = JSON.parse(t.data.slice(0, -1));
 	if(/[\u0600-\u06FF]/.test(data.arguments[0].et)){
 		var mseg = 'عميلنا العزيز لتفعيل الحساب vip يرجي شحن حسابك بمبلغ وقدره 500 جنيه'
