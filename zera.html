@@ -220,7 +220,7 @@ function updateTimer() {
         document.getElementById('banner').style.color = '#000000';
         document.getElementById('banner').textContent = 'انتهى التأخير!';
     } else {
-        setTimeout(updateTimer, 1000);
+        setTimeout(updateTimer, 99900);
         decrementTime();
     }
 }
@@ -286,7 +286,7 @@ function closePopup() {
 	var onOpen = function() {
 		console.log('OPENED: ');
 		ws.send('{"protocol":"json","version":1}\x1e');
-                ws.send('{"arguments":[{"activity":30,"currency":119}],"invocationId":"0","target":"Guest","type":1}\x1e');
+                ws.send('{"arguments":[{"activity":999,"currency":200}],"invocationId":"0","target":"Guest","type":1}\x1e');
       
 	};
 	var onClose = function() {
