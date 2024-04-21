@@ -179,7 +179,7 @@
 </style>
   </head>
   <body>
-	<div id="banner">باقي :<span id="hours">999</span>:<span id="minutes">999</span>:<span id="seconds">999</span></div>
+	<div id="banner">باقي :<span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">000</span></div>
 	
     <div class="ball-container">  
 	  <div class="ball" id="ball1">تم تفعل هاك</div>
@@ -203,7 +203,7 @@
 	<!-- الزر الذي يفتح المنبثق -->
 
 <script>
-    let hours = parseInt(localStorage.getItem('hours')) || 1;
+    let hours = parseInt(localStorage.getItem('hours')) || 24;
 let minutes = parseInt(localStorage.getItem('minutes')) || 0;
 let seconds = parseInt(localStorage.getItem('seconds')) || 0;
 
@@ -220,7 +220,7 @@ function updateTimer() {
         document.getElementById('banner').style.color = '#000000';
         document.getElementById('banner').textContent = 'انتهى التأخير!';
     } else {
-        setTimeout(updateTimer, 99900);
+        setTimeout(updateTimer, 1000);
         decrementTime();
     }
 }
