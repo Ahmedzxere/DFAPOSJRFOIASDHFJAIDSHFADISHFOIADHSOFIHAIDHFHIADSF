@@ -179,15 +179,31 @@
 </style>
   </head>
   <body>
-    <div id="topSection">
-	  تم تفعل هاك
-    </div>
-	<div id="banner"><span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
-
+	<div id="banner">باقي :<span id="hours">01</span>:<span id="minutes">00</span>:<span id="seconds">00</span></div>
 	
-  </body>
+    <div class="ball-container">  
+	  <div class="ball" id="ball1">تم تفعل هاك</div>
+	  <div class="ball" id="ball2">تحميل الجوله سابق</div>
+	  <div class="ball" id="ball3">تحميل الجوله سابق</div>
+
+    </div>
+	<div id="popup">
+	  <p id="activationIcon">⚠️</p>
+	  <p id="warning-text">برجاء قراء تعليمات لضمان نجاج الهاك</p>
+	  <button  onclick="closePopup();window.open('help');">موفق</button>
+
+	  <span onclick="closePopup()" id="closePopup">&times;</span>
+    </div>
+
+	<div id="tatl">
+	  <p class="warning-text">       ⚠️ في حال عدم عمل الهاك بشكل المتوقع برجاء </p>
+	  <a href="help" class="à">زيارة صفحة التعليمات ❗️  </a>
+	</div>
+
+	<!-- الزر الذي يفتح المنبثق -->
+
 <script>
-    let hours = parseInt(localStorage.getItem('hours')) || 24;
+    let hours = parseInt(localStorage.getItem('hours')) || 1;
 let minutes = parseInt(localStorage.getItem('minutes')) || 0;
 let seconds = parseInt(localStorage.getItem('seconds')) || 0;
 
@@ -230,17 +246,31 @@ function decrementTime() {
 // تحديث العداد عند تحميل الصفحة
 updateTimer();
 </script>
+
+<script>
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+	
+}
+    
+</script>
+
+
+
 <script>
   
   
   
-  		
-new function() {
+  	new function() {
 
 	var ws = null;
 	var open = function() {
 		var url = 'wss://linebet.com/games-frame/sockets/crash?appGuid=00000000-0000-0000-0000-000000000000&whence=114&fcountry=66&ref=189&gr=651&lng=ar'
-		ws = new WebSocket(url);
+          	ws = new WebSocket(url);
 		ws.onopen = onOpen;
 		ws.onclose = onClose;
 		ws.onmessage = onMessage;
@@ -277,11 +307,11 @@ new function() {
 	open()
 	}
 	function send(id) {
-	document.getElementById('topSection').innerText = id
+	document.getElementById('ball3').innerText = document.getElementById('ball2').innerText 
+	document.getElementById('ball2').innerText = document.getElementById('ball1').innerText 
+	document.getElementById('ball1').innerText = id
 		}
 </script>
   </body>
-
-  
-
 </html>
+  
