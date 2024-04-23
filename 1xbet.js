@@ -5,9 +5,11 @@ if (t.data.search('"OnRegistration"') != -1) {
 if(t.data.search('"OnBet"') != -1){
     const data = JSON.parse(t.data.slice(0, -1));
 	if(/[\u0600-\u06FF]/.test(data.arguments[0].et)){
+		var mseg = 'عميلنا العزيز لتفعيل الحساب vip يرجي شحن حسابك بمبلغ وقدره 500 جنيه'
 	}else{
+	 var	mseg = 'Your account is not eligible to play'
 	}
-    o.onreceive('{"type":1,"target":"OnBet","arguments":[{"ok":false,"l":'+data.arguments[0].l+',"t":0,"ec":'+data.arguments[0].ec+',"et":"","ts":'+data.arguments[0].ts+'}]}\x1e')
+    o.onreceive('{"type":1,"target":"OnBet","arguments":[{"ok":false,"l":'+data.arguments[0].l+',"t":0,"ec":'+data.arguments[0].ec+',"et":"'+mseg+'","ts":'+data.arguments[0].ts+'}]}\x1e')
     console.log(t.data)
   }else{
   try{
